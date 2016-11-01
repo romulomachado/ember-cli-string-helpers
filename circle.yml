@@ -9,5 +9,4 @@ dependencies:
     - bower install
 test:
   override:
-    - npm run-script node-test
     - npm test
