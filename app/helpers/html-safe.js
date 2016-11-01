@@ -1,1 +1,1 @@
-export { default, htmlSafe } from 'ember-composable-helpers/helpers/html-safe';
+export { default, htmlSafe } from 'ember-string-helpers/helpers/html-safe';

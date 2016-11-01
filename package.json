@@ -1,7 +1,7 @@
 {
-  "name": "ember-composable-helpers",
-  "version": "1.1.2",
-  "description": "Composable helpers for Ember",
+  "name": "ember-string-helpers",
+  "version": "0.0.1",
+  "description": "String helpers for Ember",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -12,15 +12,16 @@
     "node-test": "mocha test --recursive --reporter spec",
     "test": "ember try:each"
   },
-  "repository": "https://github.com/DockYard/ember-composable-helpers",
-  "bugs": "https://github.com/DockYard/ember-composable-helpers/issues",
-  "homepage": "https://github.com/DockYard/ember-composable-helpers",
+  "repository": "https://github.com/romulomachado/ember-string-helpers",
+  "bugs": "https://github.com/romulomachado/ember-string-helpers/issues",
+  "homepage": "https://github.com/romulomachado/ember-string-helpers",
   "engines": {
     "node": ">= 0.10.0"
   },
   "author": [
     "Lauren Tan <arr@sugarpirate.com>",
-    "Marten Schilstra <mail@martenschilstra.nl>"
+    "Marten Schilstra <mail@martenschilstra.nl>",
+    "Rômulo Machado <romulo.machado5@gmail.com>"
   ],
   "license": "MIT",
   "devDependencies": {
@@ -41,7 +42,6 @@
     "ember-cli-uglify": "^1.2.0",
     "ember-disable-prototype-extensions": "^1.1.0",
     "ember-disable-proxy-controllers": "^1.0.1",
-    "ember-each-in-polyfill": "^0.1.4",
     "ember-exam": "0.4.6",
     "ember-export-application-global": "^1.0.5",
     "ember-load-initializers": "^0.5.1",
@@ -53,15 +53,7 @@
   },
   "keywords": [
     "ember-addon",
-    "helpers",
-    "compose",
-    "group-by",
-    "map-by",
-    "filter-by",
-    "sort-by",
-    "take",
-    "drop",
-    "compute"
+    "helpers"
   ],
   "dependencies": {
     "broccoli-funnel": "^1.0.1",

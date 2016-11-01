@@ -1,1 +1,1 @@
-export { default, truncate } from 'ember-composable-helpers/helpers/truncate';
+export { default, truncate } from 'ember-string-helpers/helpers/truncate';

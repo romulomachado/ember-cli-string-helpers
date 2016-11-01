@@ -1,1 +1,1 @@
-export { default, camelize } from 'ember-composable-helpers/helpers/camelize';
+export { default, camelize } from 'ember-string-helpers/helpers/camelize';

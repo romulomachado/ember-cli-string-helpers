@@ -1,1 +1,1 @@
-export { default, dasherize } from 'ember-composable-helpers/helpers/dasherize';
+export { default, dasherize } from 'ember-string-helpers/helpers/dasherize';

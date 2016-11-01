@@ -1,1 +1,1 @@
-export { default, classify } from 'ember-composable-helpers/helpers/classify';
+export { default, classify } from 'ember-string-helpers/helpers/classify';

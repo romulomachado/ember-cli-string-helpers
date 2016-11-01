@@ -1,1 +1,1 @@
-export { default, capitalize } from 'ember-composable-helpers/helpers/capitalize';
+export { default, capitalize } from 'ember-string-helpers/helpers/capitalize';

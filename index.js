@@ -8,7 +8,7 @@ var intersection = require('./lib/intersection');
 var difference = require('./lib/difference');
 
 module.exports = {
-  name: 'ember-composable-helpers',
+  name: 'ember-string-helpers',
 
   included: function(app) {
     this._super.included.apply(this, arguments);
