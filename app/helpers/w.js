@@ -1,1 +1,1 @@
-export { default, w } from 'ember-string-helpers/helpers/w';
+export { default, w } from 'ember-cli-string-helpers/helpers/w';

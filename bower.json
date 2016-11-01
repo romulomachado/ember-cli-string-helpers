@@ -1,5 +1,5 @@
 {
-  "name": "ember-string-helpers",
+  "name": "ember-cli-string-helpers",
   "dependencies": {
     "ember": "~2.9.0",
     "ember-cli-shims": "0.1.3"

@@ -1,5 +1,5 @@
 {
-  "name": "ember-string-helpers",
+  "name": "ember-cli-string-helpers",
   "version": "0.0.1",
   "description": "String helpers for Ember",
   "directories": {
@@ -12,9 +12,9 @@
     "node-test": "mocha test --recursive --reporter spec",
     "test": "ember try:each"
   },
-  "repository": "https://github.com/romulomachado/ember-string-helpers",
-  "bugs": "https://github.com/romulomachado/ember-string-helpers/issues",
-  "homepage": "https://github.com/romulomachado/ember-string-helpers",
+  "repository": "https://github.com/romulomachado/ember-cli-string-helpers",
+  "bugs": "https://github.com/romulomachado/ember-cli-string-helpers/issues",
+  "homepage": "https://github.com/romulomachado/ember-cli-string-helpers",
   "engines": {
     "node": ">= 0.10.0"
   },

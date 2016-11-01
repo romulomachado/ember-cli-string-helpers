@@ -1,1 +1,1 @@
-export { default, truncate } from 'ember-string-helpers/helpers/truncate';
+export { default, truncate } from 'ember-cli-string-helpers/helpers/truncate';

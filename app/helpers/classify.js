@@ -1,1 +1,1 @@
-export { default, classify } from 'ember-string-helpers/helpers/classify';
+export { default, classify } from 'ember-cli-string-helpers/helpers/classify';

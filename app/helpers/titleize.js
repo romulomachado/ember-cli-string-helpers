@@ -1,1 +1,1 @@
-export { default, titleize } from 'ember-string-helpers/helpers/titleize';
+export { default, titleize } from 'ember-cli-string-helpers/helpers/titleize';

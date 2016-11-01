@@ -1,12 +1,12 @@
-# ember-string-helpers
-<!-- ![Download count all time](https://img.shields.io/npm/dt/ember-string-helpers.svg) [![CircleCI](https://circleci.com/gh/DockYard/ember-string-helpers.svg?style=shield)](https://circleci.com/gh/DockYard/ember-string-helpers) [![npm version](https://badge.fury.io/js/ember-string-helpers.svg)](https://badge.fury.io/js/ember-string-helpers) [![Ember Observer Score](http://emberobserver.com/badges/ember-string-helpers.svg)](http://emberobserver.com/addons/ember-string-helpers) -->
+# ember-cli-string-helpers
+<!-- ![Download count all time](https://img.shields.io/npm/dt/ember-cli-string-helpers.svg) [![CircleCI](https://circleci.com/gh/DockYard/ember-cli-string-helpers.svg?style=shield)](https://circleci.com/gh/DockYard/ember-cli-string-helpers) [![npm version](https://badge.fury.io/js/ember-cli-string-helpers.svg)](https://badge.fury.io/js/ember-cli-string-helpers) [![Ember Observer Score](http://emberobserver.com/badges/ember-cli-string-helpers.svg)](http://emberobserver.com/addons/ember-cli-string-helpers) -->
 
 String helpers for Ember. Extracted from the great [DockYard's ember-composable-helpers](https://github.com/DockYard/ember-composable-helpers/).
 
 To install:
 
 ```no-highlight
-ember install ember-string-helpers
+ember install ember-cli-string-helpers
 ```
 
 ## Available helpers
@@ -124,9 +124,9 @@ See also: [Ember `w` documentation](http://emberjs.com/api/classes/Ember.String.
 
 **[⬆️ back to top](#available-helpers)**
 
-### See also:
+## See also:
 
-* [ember-string-helpers](https://github.com/dockyard/ember-composable-helpers)
+* [ember-composable-helpers](https://github.com/dockyard/ember-composable-helpers)
 * [ember-truth-helpers](https://github.com/jmurphyau/ember-truth-helpers)
 
 ## Legal

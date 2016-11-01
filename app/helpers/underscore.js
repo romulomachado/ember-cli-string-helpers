@@ -1,1 +1,1 @@
-export { default, underscore } from 'ember-string-helpers/helpers/underscore';
+export { default, underscore } from 'ember-cli-string-helpers/helpers/underscore';
