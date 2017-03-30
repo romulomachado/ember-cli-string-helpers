@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('join', 'Integration | Helper | {{join}}', {
+moduleForComponent('join', 'Integration | Helper | {{w}}', {
   integration: true
 });
 
@@ -21,4 +21,10 @@ test('It makes an array of many words', function(assert) {
 test('You can even break up multiple strings of words', function(assert) {
   this.render(hbs`{{#each (w "foo bar" "baz") as |word|}}{{word}}{{/each}}`);
   assert.equal(this.$().text().trim(), 'foobarbaz', 'the words are turned into an array');
+});
+
+test('It gracefully handles empty arguments', function(assert) {
+  this.render(hbs`{{#each (w) as |word|}}{{word}}{{/each}}`);
+
+  assert.equal(this.$().text().trim(), '', 'is blank');
 });
