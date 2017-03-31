@@ -9,6 +9,27 @@ To install:
 ember install ember-cli-string-helpers
 ```
 
+## Configuration
+
+This addon performs optional tree-shaking – you can specify which helpers to whitelist or blacklist using `only` or `except` within your `config/environment.js`:
+
+```js
+module.exports = function(environment) {
+  var ENV = {
+    'ember-cli-string-helpers': {
+      only: ['dasherize', 'underscore'],
+      except: ['titleize', 'capitalize']
+    }
+  };
+```
+
+Both `only` and `except` can be safely used together (the addon computes the diff), although it's best if you only use one for your own sanity.
+
+```js
+except: ['camelize'] // imports all helpers except `camelize`
+only: ['camelize'] // imports only `camelize`
+```
+
 ## Available helpers
 
 * [`camelize`](#camelize)
