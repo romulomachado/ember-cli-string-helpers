@@ -37,9 +37,11 @@ only: ['camelize'] // imports only `camelize`
 * [`classify`](#classify)
 * [`dasherize`](#dasherize)
 * [`html-safe`](#html-safe)
+* [`lowercase`](#lowercase)
 * [`truncate`](#truncate)
 * [`titleize`](#titleize)
 * [`underscore`](#underscore)
+* [`uppercase`](#uppercase)
 * [`w`](#w)
 
 ## Usage
@@ -94,6 +96,16 @@ Mark a string as safe for unescaped output with Ember templates using `Ember.Str
 
 **[⬆️ back to top](#available-helpers)**
 
+#### `lowercase`
+Lowercases a string
+
+```hbs
+{{lowercase "People Person's Paper People"}}
+{{lowercase phrase}}
+```
+
+**[⬆️ back to top](#available-helpers)**
+
 #### `titleize`
 Titleizes a string
 
@@ -120,6 +132,16 @@ Capitalizes a string using `Ember.String.underscore`.
 ```hbs
 {{underscore "whatsThat"}}
 {{underscore phrase}}
+```
+
+**[⬆️ back to top](#available-helpers)**
+
+#### `uppercase`
+Uppercases a string
+
+```hbs
+{{uppercase "loud noises"}}
+{{uppercase phrase}}
 ```
 
 **[⬆️ back to top](#available-helpers)**
