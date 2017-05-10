@@ -37,6 +37,7 @@ only: ['camelize'] // imports only `camelize`
 * [`classify`](#classify)
 * [`dasherize`](#dasherize)
 * [`html-safe`](#html-safe)
+* [`humanize`](#humanize)
 * [`lowercase`](#lowercase)
 * [`truncate`](#truncate)
 * [`titleize`](#titleize)
@@ -95,6 +96,17 @@ Mark a string as safe for unescaped output with Ember templates using `Ember.Str
 ```
 
 **[⬆️ back to top](#available-helpers)**
+
+#### `humanize`
+Removes dashes and underscores from a string, and capitalizes the first letter.
+
+```hbs
+{{humanize "some-string"}}
+{{humanize phrase}}
+```
+
+**[⬆️ back to top](#available-helpers)**
+
 
 #### `lowercase`
 Lowercases a string
