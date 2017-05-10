@@ -21,6 +21,14 @@ test('It converts dashes to spaces and capitalizes the first word', function(ass
   assert.equal(this.$().text().trim(), expected, 'converts underscored to humanized');
 });
 
+test('It correctly handles single string input', function(assert) {
+  this.render(hbs `{{humanize "a"}}`);
+
+  let expected = 'A';
+
+  assert.equal(this.$().text().trim(), expected, 'converts underscored to humanized');
+});
+
 test('It correctly handles empty string input', function(assert) {
   this.render(hbs `{{humanize ""}}`);
 
