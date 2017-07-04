@@ -44,3 +44,51 @@ test('It correctly handles undefined input', function(assert) {
 
   assert.equal(this.$().text().trim(), expected, 'converts underscored to humanized');
 });
+
+test('It correctly handles capitalised input with spaces', function(assert) {
+  this.render(hbs `{{humanize "CHOOSE AN ITEM COLOR"}}`);
+
+  let expected = 'Choose an item color';
+
+  assert.equal(this.$().text().trim(), expected, 'converts capitals to humanized');
+});
+
+test('It correctly handles capitalised input with underscores', function(assert) {
+  this.render(hbs `{{humanize "CHOOSE_AN_ITEM_COLOR"}}`);
+
+  let expected = 'Choose an item color';
+
+  assert.equal(this.$().text().trim(), expected, 'converts capitals to humanized');
+});
+
+test('It correctly handles capitalised input with dashes', function(assert) {
+  this.render(hbs `{{humanize "CHOOSE-AN-ITEM-COLOR"}}`);
+
+  let expected = 'Choose an item color';
+
+  assert.equal(this.$().text().trim(), expected, 'converts capitals to humanized');
+});
+
+test('It correctly handles mixed-case input with spaces', function(assert) {
+  this.render(hbs `{{humanize "cHoOsE aN iTeM cOlOr"}}`);
+
+  let expected = 'Choose an item color';
+
+  assert.equal(this.$().text().trim(), expected, 'converts capitals to humanized');
+});
+
+test('It correctly handles mixed-case input with underscores', function(assert) {
+  this.render(hbs `{{humanize "cHoOsE_aN_iTeM_cOlOr"}}`);
+
+  let expected = 'Choose an item color';
+
+  assert.equal(this.$().text().trim(), expected, 'converts capitals to humanized');
+});
+
+test('It correctly handles mixed-case input with dashes', function(assert) {
+  this.render(hbs `{{humanize "cHoOsE-aN-iTeM-cOlOr"}}`);
+
+  let expected = 'Choose an item color';
+
+  assert.equal(this.$().text().trim(), expected, 'converts capitals to humanized');
+});

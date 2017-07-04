@@ -98,7 +98,7 @@ Mark a string as safe for unescaped output with Ember templates using `Ember.Str
 **[⬆️ back to top](#available-helpers)**
 
 #### `humanize`
-Removes dashes and underscores from a string, and capitalizes the first letter.
+Removes dashes and underscores from a string, capitalizes the first letter and makes the rest of the string lower case.
 
 ```hbs
 {{humanize "some-string"}}
