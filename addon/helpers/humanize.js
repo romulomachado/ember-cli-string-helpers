@@ -9,7 +9,7 @@ export function humanize([string]) {
     return '';
   }
 
-  let result = string.replace(regex, replacement);
+  let result = string.toLowerCase().replace(regex, replacement);
   return result.charAt(0).toUpperCase() + result.slice(1);
 }
 
