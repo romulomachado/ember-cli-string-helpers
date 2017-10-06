@@ -109,7 +109,7 @@ Removes dashes and underscores from a string, capitalizes the first letter and m
 
 
 #### `lowercase`
-Lowercases a string
+Lowercases a string.
 
 ```hbs
 {{lowercase "People Person's Paper People"}}
@@ -119,7 +119,7 @@ Lowercases a string
 **[⬆️ back to top](#available-helpers)**
 
 #### `titleize`
-Titleizes a string
+Capitalizes every word separated by a white space or a dash.
 
 ```hbs
 {{titleize "my big fat greek wedding"}}
@@ -149,7 +149,7 @@ Capitalizes a string using `Ember.String.underscore`.
 **[⬆️ back to top](#available-helpers)**
 
 #### `uppercase`
-Uppercases a string
+Uppercases a string.
 
 ```hbs
 {{uppercase "loud noises"}}
@@ -159,7 +159,7 @@ Uppercases a string
 **[⬆️ back to top](#available-helpers)**
 
 #### `w`
-Splits a string on whitespace and/or turns multiple words into an array
+Splits a string on whitespace and/or turns multiple words into an array.
 
 ```hbs
 {{#each (w "First" "Second" "Last") as |rank|}}
