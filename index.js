@@ -1,5 +1,4 @@
-/* jshint node: true, esnext: false */
-/* jscs: disable */
+/* eslint-env node */
 'use strict';
 
 var Funnel = require('broccoli-funnel');
@@ -28,7 +27,7 @@ module.exports = {
     // see: https://github.com/ember-cli/ember-cli/issues/4463
     var tree = this._super.treeForAddon.apply(this, arguments);
 
-    return this.filterHelpers(tree, new RegExp('^modules\/' + this.name + '\/helpers\/', 'i'));
+    return this.filterHelpers(tree, new RegExp('^modules/' + this.name + '/helpers/', 'i'));
   },
 
   filterHelpers: function(tree, regex) {
@@ -109,4 +108,3 @@ module.exports = {
     return except;
   }
 };
-/* jscs: enable */
