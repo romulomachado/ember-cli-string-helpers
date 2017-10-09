@@ -1,28 +1,26 @@
-/* globals describe, it */
-/* jshint node: true, esnext: false, expr: true */
-/* jscs: disable */
+/* eslint-env node */
 'use strict';
 
-var intersection = require('../../lib/intersection');
-var expect = require('chai').expect;
+let intersection = require('../../lib/intersection');
+let { describe, it } = require('mocha');
+let { expect } = require('chai');
 
 describe('intersection', function() {
   it('finds the intersection between 2 arrays', function() {
-    var a = ['foo', 'bar', 'baz'];
-    var b = ['bar', 'baz', 'qux'];
-    var expectedResult = ['bar', 'baz'];
-    var result = intersection(a, b);
+    let a = ['foo', 'bar', 'baz'];
+    let b = ['bar', 'baz', 'qux'];
+    let expectedResult = ['bar', 'baz'];
+    let result = intersection(a, b);
 
     expect(result).to.eql(expectedResult);
   });
 
   it('finds the intersection between 2 arrays', function() {
-    var a = ['foo', 'bar', 'baz'];
-    var b = ['bar', 'baz', 'qux'];
-    var expectedResult = ['bar', 'baz'];
-    var result = intersection(b, a);
+    let a = ['foo', 'bar', 'baz'];
+    let b = ['bar', 'baz', 'qux'];
+    let expectedResult = ['bar', 'baz'];
+    let result = intersection(b, a);
 
     expect(result).to.eql(expectedResult);
   });
 });
-/* jscs:enable */
