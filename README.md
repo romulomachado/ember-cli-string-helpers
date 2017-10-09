@@ -11,7 +11,7 @@ ember install ember-cli-string-helpers
 
 ## Configuration
 
-This addon performs optional tree-shaking – you can specify which helpers to whitelist or blacklist using `only` or `except` within your `config/environment.js`:
+If you don't need all the helpers, you can specify which to whitelist or blacklist using `only` or `except` within your `config/environment.js`:
 
 ```js
 module.exports = function(environment) {
