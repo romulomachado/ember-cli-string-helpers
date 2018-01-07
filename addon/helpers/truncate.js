@@ -1,4 +1,4 @@
-import { helper } from 'ember-helper';
+import { helper } from '@ember/component/helper';
 
 export function truncate([string, characterLimit = 140]) {
   let limit = characterLimit - 3;

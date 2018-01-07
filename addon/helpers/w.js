@@ -1,5 +1,5 @@
-import { helper } from 'ember-helper';
-import { w as toWords } from 'ember-string';
+import { helper } from '@ember/component/helper';
+import { w as toWords } from '@ember/string';
 
 export function w([...wordStrings]) {
   return wordStrings
