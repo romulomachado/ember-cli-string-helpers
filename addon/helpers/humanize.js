@@ -1,4 +1,4 @@
-import { helper } from 'ember-helper';
+import { helper } from '@ember/component/helper';
 
 const regex = /_+|-+/g;
 const replacement = ' ';

@@ -1,4 +1,4 @@
-import { helper } from 'ember-helper';
+import { helper } from '@ember/component/helper';
 import titleizeLib from 'ember-cli-string-helpers/utils/titleize';
 import createStringHelperFunction from '../-private/create-string-helper';
 
