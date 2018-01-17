@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-string-helpers",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "String helpers for Ember",
   "directories": {
     "doc": "doc",
