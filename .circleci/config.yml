@@ -3,40 +3,21 @@ jobs:
   build:
     working_directory: ~/romulomachado/ember-cli-string-helpers
     docker:
-      - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
+      - image: circleci/node:6-browsers
     steps:
       - checkout
-      - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
-      - run:
-        working_directory: ~/romulomachado/ember-cli-string-helpers
-        command: nvm install 6 && nvm alias default 6
-      - run:
-        working_directory: ~/romulomachado/ember-cli-string-helpers
-        command: echo -e "export PATH=${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin" >> $BASH_ENV
-
       - restore_cache:
-          keys:
-          - v1-dep-{{ .Branch }}-
-          - v1-dep-master-
-          - v1-dep-
-      - run: yarn
+          key: node-modules-cache-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install packages
+          command: yarn
       - save_cache:
-          key: v1-dep-{{ .Branch }}-{{ epoch }}
+          key: node-modules-cache-{{ checksum "yarn.lock" }}
           paths:
-          - vendor/bundle
-          - ~/virtualenvs
-          - ~/.m2
-          - ~/.ivy2
-          - ~/.bundle
-          - ~/.go_workspace
-          - ~/.gradle
-          - ~/.cache/bower
-          - ~/.cache/yarn
-          - ./node_modules
-        - run: yarn test
-        - store_test_results:
-            path: /tmp/circleci-test-results
-        - store_artifacts:
-            path: /tmp/circleci-artifacts
-        - store_artifacts:
-            path: /tmp/circleci-test-results
+           - node_modules
+      - run:
+          name: Run tests
+          command: yarn test
+            esac
+      - store_test_results:
+          path: test-results
