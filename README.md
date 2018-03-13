@@ -39,8 +39,9 @@ only: ['camelize'] // imports only `camelize`
 * [`html-safe`](#html-safe)
 * [`humanize`](#humanize)
 * [`lowercase`](#lowercase)
-* [`truncate`](#truncate)
 * [`titleize`](#titleize)
+* [`trim`](#trim)
+* [`truncate`](#truncate)
 * [`underscore`](#underscore)
 * [`uppercase`](#uppercase)
 * [`w`](#w)
@@ -127,6 +128,14 @@ Capitalizes every word separated by a white space or a dash.
 ```
 
 **[⬆️ back to top](#available-helpers)**
+
+#### `trim`
+Trim a string.
+
+```hbs
+{{trim "  Lorem ipsum dolor sit amet, consectetur adipiscing elit.   "}}
+{{trim phrase}}
+```
 
 #### `truncate`
 Truncates a string with a characterLimit.
