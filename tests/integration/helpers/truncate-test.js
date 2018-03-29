@@ -34,6 +34,6 @@ test('It truncates to characterLimit provided without an ellipsis if useEllipsis
 
   let expected = 'Lorem ipsum dolor si';
 
-  assert.equal(this.$().text().trim(), expected, 'truncates to characterLimit');
+  assert.equal(this.$().text().trim(), expected, 'truncates to characterLimit without ellipsis');
 });
 
