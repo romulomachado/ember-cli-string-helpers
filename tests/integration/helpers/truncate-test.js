@@ -28,3 +28,12 @@ test('It does not truncate if string is not longer than characterLimit', functio
 
   assert.equal(this.$().text().trim(), expected, 'does not truncate');
 });
+
+test('It truncates to characterLimit provided without an ellipsis if useEllipsis is false', function(assert) {
+  this.render(hbs`{{truncate "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id. Etiam vitae blandit purus, sed semper sem." 20 false}}`);
+
+  let expected = 'Lorem ipsum dolor si';
+
+  assert.equal(this.$().text().trim(), expected, 'truncates to characterLimit');
+});
+
