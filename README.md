@@ -142,7 +142,7 @@ Truncates a string with a characterLimit and optionally adds an ellipsis to the 
 
 ```hbs
 {{truncate "Lorem ipsum dolor sit amet, consectetur adipiscing elit." 20 true}}
-{{truncate phrase useEllipsis}}
+{{truncate phrase characterLimit useEllipsis}}
 ```
 
 **[⬆️ back to top](#available-helpers)**
