@@ -138,11 +138,11 @@ Trim a string.
 ```
 
 #### `truncate`
-Truncates a string with a characterLimit.
+Truncates a string with a characterLimit and optionally adds an ellipsis to the end.
 
 ```hbs
-{{truncate "Lorem ipsum dolor sit amet, consectetur adipiscing elit." 20}}
-{{truncate phrase}}
+{{truncate "Lorem ipsum dolor sit amet, consectetur adipiscing elit." 20 true}}
+{{truncate phrase characterLimit useEllipsis}}
 ```
 
 **[⬆️ back to top](#available-helpers)**
