@@ -1,4 +1,4 @@
-import { isHtmlSafe } from '@ember/string';
+import { isHTMLSafe } from '@ember/string';
 
 export default function(stringFunction) {
   return function([string]) {
