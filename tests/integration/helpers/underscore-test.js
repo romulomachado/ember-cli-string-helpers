@@ -1,5 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import { htmlSafe } from '@ember/string';
 
 moduleForComponent('underscore', 'Integration | Helper | {{underscore}}', {
   integration: true
@@ -43,4 +44,14 @@ test('It correctly handles undefined input', function(assert) {
   let expected = '';
 
   assert.equal(this.$().text().trim(), expected, 'renders empty string if undefined input');
+});
+
+test('It handles a SafeString', function(assert) {
+  this.set('wizard', htmlSafe('harry-potter'));
+
+  this.render(hbs`{{underscore wizard}}`);
+
+  let expected = 'harry_potter';
+
+  assert.equal(this.$().text().trim(), expected, 'correctly underscores a SafeString');
 });

@@ -1,5 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import { htmlSafe } from '@ember/string';
 
 moduleForComponent('dasherize', 'Integration | Helper | {{truncate}}', {
   integration: true
@@ -37,3 +38,12 @@ test('It truncates to characterLimit provided without an ellipsis if useEllipsis
   assert.equal(this.$().text().trim(), expected, 'truncates to characterLimit without ellipsis');
 });
 
+test('It handles a SafeString', function(assert) {
+  this.set('sentence', htmlSafe('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id. Etiam vitae blandit purus, sed semper sem.'));
+
+  this.render(hbs`{{truncate sentence 20}}`);
+
+  let expected = 'Lorem ipsum dolor...';
+
+  assert.equal(this.$().text().trim(), expected, 'correctly trims a SafeString');
+});

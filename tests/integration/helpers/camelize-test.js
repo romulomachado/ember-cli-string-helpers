@@ -1,5 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import { htmlSafe } from '@ember/string';
 
 moduleForComponent('camelize', 'Integration | Helper | {{camelize}}', {
   integration: true
@@ -51,4 +52,14 @@ test('It correctly handles undefined input', function(assert) {
   let expected = '';
 
   assert.equal(this.$().text().trim(), expected, 'renders empty string if undefined input');
+});
+
+test('It handles a SafeString', function(assert) {
+  this.set('wizard', htmlSafe('harry-potter'));
+
+  this.render(hbs`{{camelize wizard}}`);
+
+  let expected = 'harryPotter';
+
+  assert.equal(this.$().text().trim(), expected, 'correctly camelizes a SafeString');
 });

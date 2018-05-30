@@ -1,10 +1,15 @@
 import { helper } from '@ember/component/helper';
+import { isHTMLSafe } from '@ember/string';
 
 const regex = /_+|-+/g;
 const replacement = ' ';
 
 // The substituted value will be contained in the result variable
 export function humanize([string]) {
+  if (isHTMLSafe(string)) {
+    string = string.string;
+  }
+
   if (string === undefined || string === null) {
     return '';
   }

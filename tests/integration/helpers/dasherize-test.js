@@ -1,5 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import { htmlSafe } from '@ember/string';
 
 moduleForComponent('dasherize', 'Integration | Helper | {{dasherize}}', {
   integration: true
@@ -43,4 +44,14 @@ test('It correctly handles undefined input', function(assert) {
   let expected = '';
 
   assert.equal(this.$().text().trim(), expected, 'renders empty string if undefined input');
+});
+
+test('It handles a SafeString', function(assert) {
+  this.set('wizard', htmlSafe('harry_potter'));
+
+  this.render(hbs`{{dasherize wizard}}`);
+
+  let expected = 'harry-potter';
+
+  assert.equal(this.$().text().trim(), expected, 'correctly dasherizes a SafeString');
 });

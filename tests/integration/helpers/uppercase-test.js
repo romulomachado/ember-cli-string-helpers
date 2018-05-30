@@ -1,5 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import { htmlSafe } from '@ember/string';
 
 moduleForComponent('uppercase', 'Integration | Helper | {{uppercase}}', {
   integration: true
@@ -51,4 +52,14 @@ test('It correctly handles undefined input', function(assert) {
   let expected = '';
 
   assert.equal(this.$().text().trim(), expected, 'renders empty string if undefined input');
+});
+
+test('It handles a SafeString', function(assert) {
+  this.set('screamplease', htmlSafe('noooooooo'));
+
+  this.render(hbs`{{uppercase screamplease}}`);
+
+  let expected = 'NOOOOOOOO';
+
+  assert.equal(this.$().text().trim(), expected, 'converts all lowercase SafeString to uppercase');
 });

@@ -1,5 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import { htmlSafe } from '@ember/string';
 
 moduleForComponent('humanize', 'Integration | Helper | {{humanize}}', {
   integration: true
@@ -91,4 +92,14 @@ test('It correctly handles mixed-case input with dashes', function(assert) {
   let expected = 'Choose an item color';
 
   assert.equal(this.$().text().trim(), expected, 'converts capitals to humanized');
+});
+
+test('It handles a SafeString', function(assert) {
+  this.set('sentence', htmlSafe('cHoOsE aN iTeM cOlOr'));
+
+  this.render(hbs `{{humanize sentence}}`);
+
+  let expected = 'Choose an item color';
+
+  assert.equal(this.$().text().trim(), expected, 'converts SafeString capitals to humanized');
 });
