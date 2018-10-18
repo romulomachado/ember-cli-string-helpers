@@ -26,8 +26,9 @@ module.exports = {
   treeForAddon: function() {
     // see: https://github.com/ember-cli/ember-cli/issues/4463
     var tree = this._super.treeForAddon.apply(this, arguments);
+    var moduleRegexp = '(^modules\/)?' + this.name + '\/helpers\/';
 
-    return this.filterHelpers(tree, new RegExp('^modules/' + this.name + '/helpers/', 'i'));
+    return this.filterHelpers(tree, new RegExp(moduleRegexp, 'i'));
   },
 
   filterHelpers: function(tree, regex) {
