@@ -1,41 +1,43 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import { htmlSafe } from '@ember/string';
 
-moduleForComponent('trim', 'Integration | Helper | {{trim}}', {
-  integration: true
-});
+module('Integration | Helper | {{trim}}', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('It trim correctly', function(assert) {
-  this.render(hbs`{{trim " aa  "}}`);
+  test('It trim correctly', async function(assert) {
+    await render(hbs`{{trim " aa  "}}`);
 
-  let expected = 'aa';
+    let expected = 'aa';
 
-  assert.equal(this.$().text(), expected, 'trim string as expected');
-});
+    assert.dom('*').hasText(expected, 'trim string as expected');
+  });
 
-test('It correctly handles empty string input', function(assert) {
-  this.render(hbs`{{trim ""}}`);
+  test('It correctly handles empty string input', async function(assert) {
+    await render(hbs`{{trim ""}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text(), expected, 'renders empty string if input is empty string');
-});
+    assert.dom('*').hasText(expected, 'renders empty string if input is empty string');
+  });
 
-test('It correctly handles undefined input', function(assert) {
-  this.render(hbs`{{trim undefined}}`);
+  test('It correctly handles undefined input', async function(assert) {
+    await render(hbs`{{trim undefined}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text(), expected, 'renders empty string if undefined input');
-});
+    assert.dom('*').hasText(expected, 'renders empty string if undefined input');
+  });
 
-test('It handles a SafeString', function(assert) {
-  this.set('breakup', htmlSafe('  i need some space  '));
+  test('It handles a SafeString', async function(assert) {
+    this.set('breakup', htmlSafe('  i need some space  '));
 
-  this.render(hbs`{{trim breakup}}`);
+    await render(hbs`{{trim breakup}}`);
 
-  let expected = 'i need some space';
+    let expected = 'i need some space';
 
-  assert.equal(this.$().text().trim(), expected, 'correctly trims a SafeString');
+    assert.dom('*').hasText(expected, 'correctly trims a SafeString');
+  });
 });

@@ -1,65 +1,67 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import { htmlSafe } from '@ember/string';
 
-moduleForComponent('lowercase', 'Integration | Helper | {{lowercase}}', {
-  integration: true
-});
+module('Integration | Helper | {{lowercase}}', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('It converts all uppercase to lowercase', function(assert) {
-  this.render(hbs`{{lowercase "ALL UPPERCASE"}}`);
+  test('It converts all uppercase to lowercase', async function(assert) {
+    await render(hbs`{{lowercase "ALL UPPERCASE"}}`);
 
-  let expected = 'all uppercase';
+    let expected = 'all uppercase';
 
-  assert.equal(this.$().text().trim(), expected, 'converts all uppercase to lowercase');
-});
+    assert.dom('*').hasText(expected, 'converts all uppercase to lowercase');
+  });
 
-test('It converts mixed case to lowercase', function(assert) {
-  this.render(hbs`{{lowercase "UPPER and lower CaSe"}}`);
+  test('It converts mixed case to lowercase', async function(assert) {
+    await render(hbs`{{lowercase "UPPER and lower CaSe"}}`);
 
-  let expected = 'upper and lower case';
+    let expected = 'upper and lower case';
 
-  assert.equal(this.$().text().trim(), expected, 'converts upper and lower case to lowercase');
-});
+    assert.dom('*').hasText(expected, 'converts upper and lower case to lowercase');
+  });
 
-test('It leaves special characters unmodified', function(assert) {
-  this.render(hbs`{{lowercase "SPECIAL @&\/*-+^\`"}}`);
+  test('It leaves special characters unmodified', async function(assert) {
+    await render(hbs`{{lowercase "SPECIAL @&\/*-+^\`"}}`);
 
-  let expected = 'special @&/*-+^`';
+    let expected = 'special @&/*-+^`';
 
-  assert.equal(this.$().text().trim(), expected, 'converts special characters');
-});
+    assert.dom('*').hasText(expected, 'converts special characters');
+  });
 
-test('It converts accented characters to lowercase', function(assert) {
-  this.render(hbs`{{lowercase "ÂÊÎÔÛÄËÏÖÜÉÀÈ"}}`);
+  test('It converts accented characters to lowercase', async function(assert) {
+    await render(hbs`{{lowercase "ÂÊÎÔÛÄËÏÖÜÉÀÈ"}}`);
 
-  let expected = 'âêîôûäëïöüéàè';
+    let expected = 'âêîôûäëïöüéàè';
 
-  assert.equal(this.$().text().trim(), expected, 'converts accented characters to lowercase');
-});
+    assert.dom('*').hasText(expected, 'converts accented characters to lowercase');
+  });
 
-test('It correctly handles empty string input', function(assert) {
-  this.render(hbs`{{lowercase ""}}`);
+  test('It correctly handles empty string input', async function(assert) {
+    await render(hbs`{{lowercase ""}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text().trim(), expected, 'renders empty string if input is empty string');
-});
+    assert.dom('*').hasText(expected, 'renders empty string if input is empty string');
+  });
 
-test('It correctly handles undefined input', function(assert) {
-  this.render(hbs`{{lowercase undefined}}`);
+  test('It correctly handles undefined input', async function(assert) {
+    await render(hbs`{{lowercase undefined}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text().trim(), expected, 'renders empty string if undefined input');
-});
+    assert.dom('*').hasText(expected, 'renders empty string if undefined input');
+  });
 
-test('It handles a SafeString', function(assert) {
-  this.set('scream', htmlSafe('NOOOOOOOO'));
+  test('It handles a SafeString', async function(assert) {
+    this.set('scream', htmlSafe('NOOOOOOOO'));
 
-  this.render(hbs`{{lowercase scream}}`);
+    await render(hbs`{{lowercase scream}}`);
 
-  let expected = 'noooooooo';
+    let expected = 'noooooooo';
 
-  assert.equal(this.$().text().trim(), expected, 'converts all uppercase SafeString to lowercase');
+    assert.dom('*').hasText(expected, 'converts all uppercase SafeString to lowercase');
+  });
 });

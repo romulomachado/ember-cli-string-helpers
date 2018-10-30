@@ -1,65 +1,67 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import { htmlSafe } from '@ember/string';
 
-moduleForComponent('uppercase', 'Integration | Helper | {{uppercase}}', {
-  integration: true
-});
+module('Integration | Helper | {{uppercase}}', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('It converts all lowercase to uppercase', function(assert) {
-  this.render(hbs`{{uppercase "all lowercase"}}`);
+  test('It converts all lowercase to uppercase', async function(assert) {
+    await render(hbs`{{uppercase "all lowercase"}}`);
 
-  let expected = 'ALL LOWERCASE';
+    let expected = 'ALL LOWERCASE';
 
-  assert.equal(this.$().text().trim(), expected, 'converts all lowercase to uppercase');
-});
+    assert.dom('*').hasText(expected, 'converts all lowercase to uppercase');
+  });
 
-test('It converts mixed case to uppercase', function(assert) {
-  this.render(hbs`{{uppercase "UPPER and lower CaSe"}}`);
+  test('It converts mixed case to uppercase', async function(assert) {
+    await render(hbs`{{uppercase "UPPER and lower CaSe"}}`);
 
-  let expected = 'UPPER AND LOWER CASE';
+    let expected = 'UPPER AND LOWER CASE';
 
-  assert.equal(this.$().text().trim(), expected, 'converts upper and lower case to uppercase');
-});
+    assert.dom('*').hasText(expected, 'converts upper and lower case to uppercase');
+  });
 
-test('It leaves special characters untouched', function(assert) {
-  this.render(hbs`{{uppercase "special @&\/*-+^\`"}}`);
+  test('It leaves special characters untouched', async function(assert) {
+    await render(hbs`{{uppercase "special @&\/*-+^\`"}}`);
 
-  let expected = 'SPECIAL @&/*-+^`';
+    let expected = 'SPECIAL @&/*-+^`';
 
-  assert.equal(this.$().text().trim(), expected, 'ignores special characters');
-});
+    assert.dom('*').hasText(expected, 'ignores special characters');
+  });
 
-test('It converts accented characters to uppercase', function(assert) {
-  this.render(hbs`{{uppercase "âêîôûäëïöüéàè"}}`);
+  test('It converts accented characters to uppercase', async function(assert) {
+    await render(hbs`{{uppercase "âêîôûäëïöüéàè"}}`);
 
-  let expected = 'ÂÊÎÔÛÄËÏÖÜÉÀÈ';
+    let expected = 'ÂÊÎÔÛÄËÏÖÜÉÀÈ';
 
-  assert.equal(this.$().text().trim(), expected, 'converts accented characters to uppercase');
-});
+    assert.dom('*').hasText(expected, 'converts accented characters to uppercase');
+  });
 
-test('It correctly handles empty string input', function(assert) {
-  this.render(hbs`{{uppercase ""}}`);
+  test('It correctly handles empty string input', async function(assert) {
+    await render(hbs`{{uppercase ""}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text().trim(), expected, 'renders empty string if input is empty string');
-});
+    assert.dom('*').hasText(expected, 'renders empty string if input is empty string');
+  });
 
-test('It correctly handles undefined input', function(assert) {
-  this.render(hbs`{{uppercase undefined}}`);
+  test('It correctly handles undefined input', async function(assert) {
+    await render(hbs`{{uppercase undefined}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text().trim(), expected, 'renders empty string if undefined input');
-});
+    assert.dom('*').hasText(expected, 'renders empty string if undefined input');
+  });
 
-test('It handles a SafeString', function(assert) {
-  this.set('screamplease', htmlSafe('noooooooo'));
+  test('It handles a SafeString', async function(assert) {
+    this.set('screamplease', htmlSafe('noooooooo'));
 
-  this.render(hbs`{{uppercase screamplease}}`);
+    await render(hbs`{{uppercase screamplease}}`);
 
-  let expected = 'NOOOOOOOO';
+    let expected = 'NOOOOOOOO';
 
-  assert.equal(this.$().text().trim(), expected, 'converts all lowercase SafeString to uppercase');
+    assert.dom('*').hasText(expected, 'converts all lowercase SafeString to uppercase');
+  });
 });

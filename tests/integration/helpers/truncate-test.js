@@ -1,49 +1,59 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import { htmlSafe } from '@ember/string';
 
-moduleForComponent('dasherize', 'Integration | Helper | {{truncate}}', {
-  integration: true
-});
+module('Integration | Helper | {{truncate}}', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('It truncates to 140 characters if no characterLimit is provided', function(assert) {
-  this.render(hbs`{{truncate "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id. Etiam vitae blandit purus, sed semper sem."}}`);
+  test('It truncates to 140 characters if no characterLimit is provided', async function(assert) {
+    await render(
+      hbs`{{truncate "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id. Etiam vitae blandit purus, sed semper sem."}}`
+    );
 
-  let expected = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id. Etiam vitae blandit pur...';
+    let expected = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id. Etiam vitae blandit pur...';
 
-  assert.equal(this.$().text().trim(), expected, 'truncates to 140 characters');
-});
+    assert.dom('*').hasText(expected, 'truncates to 140 characters');
+  });
 
-test('It truncates to characterLimit provided', function(assert) {
-  this.render(hbs`{{truncate "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id. Etiam vitae blandit purus, sed semper sem." 20}}`);
+  test('It truncates to characterLimit provided', async function(assert) {
+    await render(
+      hbs`{{truncate "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id. Etiam vitae blandit purus, sed semper sem." 20}}`
+    );
 
-  let expected = 'Lorem ipsum dolor...';
+    let expected = 'Lorem ipsum dolor...';
 
-  assert.equal(this.$().text().trim(), expected, 'truncates to characterLimit');
-});
+    assert.dom('*').hasText(expected, 'truncates to characterLimit');
+  });
 
-test('It does not truncate if string is not longer than characterLimit', function(assert) {
-  this.render(hbs`{{truncate "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id." 140}}`);
+  test('It does not truncate if string is not longer than characterLimit', async function(assert) {
+    await render(
+      hbs`{{truncate "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id." 140}}`
+    );
 
-  let expected = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id.';
+    let expected = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id.';
 
-  assert.equal(this.$().text().trim(), expected, 'does not truncate');
-});
+    assert.dom('*').hasText(expected, 'does not truncate');
+  });
 
-test('It truncates to characterLimit provided without an ellipsis if useEllipsis is false', function(assert) {
-  this.render(hbs`{{truncate "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id. Etiam vitae blandit purus, sed semper sem." 20 false}}`);
+  test('It truncates to characterLimit provided without an ellipsis if useEllipsis is false', async function(assert) {
+    await render(
+      hbs`{{truncate "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id. Etiam vitae blandit purus, sed semper sem." 20 false}}`
+    );
 
-  let expected = 'Lorem ipsum dolor si';
+    let expected = 'Lorem ipsum dolor si';
 
-  assert.equal(this.$().text().trim(), expected, 'truncates to characterLimit without ellipsis');
-});
+    assert.dom('*').hasText(expected, 'truncates to characterLimit without ellipsis');
+  });
 
-test('It handles a SafeString', function(assert) {
-  this.set('sentence', htmlSafe('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id. Etiam vitae blandit purus, sed semper sem.'));
+  test('It handles a SafeString', async function(assert) {
+    this.set('sentence', htmlSafe('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id. Etiam vitae blandit purus, sed semper sem.'));
 
-  this.render(hbs`{{truncate sentence 20}}`);
+    await render(hbs`{{truncate sentence 20}}`);
 
-  let expected = 'Lorem ipsum dolor...';
+    let expected = 'Lorem ipsum dolor...';
 
-  assert.equal(this.$().text().trim(), expected, 'correctly trims a SafeString');
+    assert.dom('*').hasText(expected, 'correctly trims a SafeString');
+  });
 });

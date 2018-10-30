@@ -1,57 +1,59 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import { htmlSafe } from '@ember/string';
 
-moduleForComponent('capitalize', 'Integration | Helper | {{capitalize}}', {
-  integration: true
-});
+module('Integration | Helper | {{capitalize}}', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('It capitalizes a single string', function(assert) {
-  this.render(hbs`{{capitalize "hi"}}`);
+  test('It capitalizes a single string', async function(assert) {
+    await render(hbs`{{capitalize "hi"}}`);
 
-  let expected = 'Hi';
+    let expected = 'Hi';
 
-  assert.equal(this.$().text().trim(), expected, 'capitalizes a single string');
-});
+    assert.dom('*').hasText(expected, 'capitalizes a single string');
+  });
 
-test('It leaves the capitalization unchanged with correctly capitalized string', function(assert) {
-  this.render(hbs`{{capitalize "Harry"}}`);
+  test('It leaves the capitalization unchanged with correctly capitalized string', async function(assert) {
+    await render(hbs`{{capitalize "Harry"}}`);
 
-  let expected = 'Harry';
+    let expected = 'Harry';
 
-  assert.equal(this.$().text().trim(), expected, 'leaves capitalization when string is already capitalized');
-});
+    assert.dom('*').hasText(expected, 'leaves capitalization when string is already capitalized');
+  });
 
-test('It correctly capitalizes an uncapitalized sentence', function(assert) {
-  this.render(hbs`{{capitalize "age is foolish and forgetful when it underestimates youth"}}`);
+  test('It correctly capitalizes an uncapitalized sentence', async function(assert) {
+    await render(hbs`{{capitalize "age is foolish and forgetful when it underestimates youth"}}`);
 
-  let expected = 'Age is foolish and forgetful when it underestimates youth';
+    let expected = 'Age is foolish and forgetful when it underestimates youth';
 
-  assert.equal(this.$().text().trim(), expected, 'correctly capitalizes an uncapitalized sentence');
-});
+    assert.dom('*').hasText(expected, 'correctly capitalizes an uncapitalized sentence');
+  });
 
-test('It correctly handles empty string input', function(assert) {
-  this.render(hbs`{{capitalize ""}}`);
+  test('It correctly handles empty string input', async function(assert) {
+    await render(hbs`{{capitalize ""}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text().trim(), expected, 'renders empty string if input is empty string');
-});
+    assert.dom('*').hasText(expected, 'renders empty string if input is empty string');
+  });
 
-test('It correctly handles undefined input', function(assert) {
-  this.render(hbs`{{capitalize undefined}}`);
+  test('It correctly handles undefined input', async function(assert) {
+    await render(hbs`{{capitalize undefined}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text().trim(), expected, 'renders empty string if undefined input');
-});
+    assert.dom('*').hasText(expected, 'renders empty string if undefined input');
+  });
 
-test('It handles a SafeString', function(assert) {
-  this.set('greeting', htmlSafe('hi'));
+  test('It handles a SafeString', async function(assert) {
+    this.set('greeting', htmlSafe('hi'));
 
-  this.render(hbs`{{capitalize greeting}}`);
+    await render(hbs`{{capitalize greeting}}`);
 
-  let expected = 'Hi';
+    let expected = 'Hi';
 
-  assert.equal(this.$().text().trim(), expected, 'correctly capitalizes a SafeString');
+    assert.dom('*').hasText(expected, 'correctly capitalizes a SafeString');
+  });
 });

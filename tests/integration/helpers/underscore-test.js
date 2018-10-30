@@ -1,57 +1,59 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import { htmlSafe } from '@ember/string';
 
-moduleForComponent('underscore', 'Integration | Helper | {{underscore}}', {
-  integration: true
-});
+module('Integration | Helper | {{underscore}}', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('It converts camelCase correctly', function(assert) {
-  this.render(hbs`{{underscore "andAnother"}}`);
+  test('It converts camelCase correctly', async function(assert) {
+    await render(hbs`{{underscore "andAnother"}}`);
 
-  let expected = 'and_another';
+    let expected = 'and_another';
 
-  assert.equal(this.$().text().trim(), expected, 'converts camelCase to underscored');
-});
+    assert.dom('*').hasText(expected, 'converts camelCase to underscored');
+  });
 
-test('It converts dashes to underscores', function(assert) {
-  this.render(hbs`{{underscore "harry-potter"}}`);
+  test('It converts dashes to underscores', async function(assert) {
+    await render(hbs`{{underscore "harry-potter"}}`);
 
-  let expected = 'harry_potter';
+    let expected = 'harry_potter';
 
-  assert.equal(this.$().text().trim(), expected, 'converts dashes to underscores');
-});
+    assert.dom('*').hasText(expected, 'converts dashes to underscores');
+  });
 
-test('It converts spaces to underscores', function(assert) {
-  this.render(hbs`{{underscore "age is foolish and forgetful when it underestimates youth"}}`);
+  test('It converts spaces to underscores', async function(assert) {
+    await render(hbs`{{underscore "age is foolish and forgetful when it underestimates youth"}}`);
 
-  let expected = 'age_is_foolish_and_forgetful_when_it_underestimates_youth';
+    let expected = 'age_is_foolish_and_forgetful_when_it_underestimates_youth';
 
-  assert.equal(this.$().text().trim(), expected, 'converts spaces to underscores');
-});
+    assert.dom('*').hasText(expected, 'converts spaces to underscores');
+  });
 
-test('It correctly handles empty string input', function(assert) {
-  this.render(hbs`{{underscore ""}}`);
+  test('It correctly handles empty string input', async function(assert) {
+    await render(hbs`{{underscore ""}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text().trim(), expected, 'renders empty string if input is empty string');
-});
+    assert.dom('*').hasText(expected, 'renders empty string if input is empty string');
+  });
 
-test('It correctly handles undefined input', function(assert) {
-  this.render(hbs`{{underscore undefined}}`);
+  test('It correctly handles undefined input', async function(assert) {
+    await render(hbs`{{underscore undefined}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text().trim(), expected, 'renders empty string if undefined input');
-});
+    assert.dom('*').hasText(expected, 'renders empty string if undefined input');
+  });
 
-test('It handles a SafeString', function(assert) {
-  this.set('wizard', htmlSafe('harry-potter'));
+  test('It handles a SafeString', async function(assert) {
+    this.set('wizard', htmlSafe('harry-potter'));
 
-  this.render(hbs`{{underscore wizard}}`);
+    await render(hbs`{{underscore wizard}}`);
 
-  let expected = 'harry_potter';
+    let expected = 'harry_potter';
 
-  assert.equal(this.$().text().trim(), expected, 'correctly underscores a SafeString');
+    assert.dom('*').hasText(expected, 'correctly underscores a SafeString');
+  });
 });
