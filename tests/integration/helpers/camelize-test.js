@@ -1,65 +1,67 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import { htmlSafe } from '@ember/string';
 
-moduleForComponent('camelize', 'Integration | Helper | {{camelize}}', {
-  integration: true
-});
+module('Integration | Helper | {{camelize}}', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('It maintains camelCase correctly', function(assert) {
-  this.render(hbs`{{camelize "andAnother"}}`);
+  test('It maintains camelCase correctly', async function(assert) {
+    await render(hbs`{{camelize "andAnother"}}`);
 
-  let expected = 'andAnother';
+    let expected = 'andAnother';
 
-  assert.equal(this.$().text().trim(), expected, 'maintains camelCase');
-});
+    assert.dom('*').hasText(expected, 'maintains camelCase');
+  });
 
-test('It converts underscores to camelCase', function(assert) {
-  this.render(hbs`{{camelize "harry_potter"}}`);
+  test('It converts underscores to camelCase', async function(assert) {
+    await render(hbs`{{camelize "harry_potter"}}`);
 
-  let expected = 'harryPotter';
+    let expected = 'harryPotter';
 
-  assert.equal(this.$().text().trim(), expected, 'converts underscores to camelCase');
-});
+    assert.dom('*').hasText(expected, 'converts underscores to camelCase');
+  });
 
-test('It converts dashes to camelCase', function(assert) {
-  this.render(hbs`{{camelize "harry-potter"}}`);
+  test('It converts dashes to camelCase', async function(assert) {
+    await render(hbs`{{camelize "harry-potter"}}`);
 
-  let expected = 'harryPotter';
+    let expected = 'harryPotter';
 
-  assert.equal(this.$().text().trim(), expected, 'converts dashes to camelCase');
-});
+    assert.dom('*').hasText(expected, 'converts dashes to camelCase');
+  });
 
-test('It converts spaces to camelCase', function(assert) {
-  this.render(hbs`{{camelize "age is foolish and forgetful when it underestimates youth"}}`);
+  test('It converts spaces to camelCase', async function(assert) {
+    await render(hbs`{{camelize "age is foolish and forgetful when it underestimates youth"}}`);
 
-  let expected = 'ageIsFoolishAndForgetfulWhenItUnderestimatesYouth';
+    let expected = 'ageIsFoolishAndForgetfulWhenItUnderestimatesYouth';
 
-  assert.equal(this.$().text().trim(), expected, 'correctly camelizes input with spaces');
-});
+    assert.dom('*').hasText(expected, 'correctly camelizes input with spaces');
+  });
 
-test('It correctly handles empty string input', function(assert) {
-  this.render(hbs`{{camelize ""}}`);
+  test('It correctly handles empty string input', async function(assert) {
+    await render(hbs`{{camelize ""}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text().trim(), expected, 'renders empty string if input is empty string');
-});
+    assert.dom('*').hasText(expected, 'renders empty string if input is empty string');
+  });
 
-test('It correctly handles undefined input', function(assert) {
-  this.render(hbs`{{camelize undefined}}`);
+  test('It correctly handles undefined input', async function(assert) {
+    await render(hbs`{{camelize undefined}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text().trim(), expected, 'renders empty string if undefined input');
-});
+    assert.dom('*').hasText(expected, 'renders empty string if undefined input');
+  });
 
-test('It handles a SafeString', function(assert) {
-  this.set('wizard', htmlSafe('harry-potter'));
+  test('It handles a SafeString', async function(assert) {
+    this.set('wizard', htmlSafe('harry-potter'));
 
-  this.render(hbs`{{camelize wizard}}`);
+    await render(hbs`{{camelize wizard}}`);
 
-  let expected = 'harryPotter';
+    let expected = 'harryPotter';
 
-  assert.equal(this.$().text().trim(), expected, 'correctly camelizes a SafeString');
+    assert.dom('*').hasText(expected, 'correctly camelizes a SafeString');
+  });
 });

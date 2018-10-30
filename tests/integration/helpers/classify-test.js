@@ -1,57 +1,59 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import { htmlSafe } from '@ember/string';
 
-moduleForComponent('classify', 'Integration | Helper | {{classify}}', {
-  integration: true
-});
+module('Integration | Helper | {{classify}}', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('It converts camelCase correctly', function(assert) {
-  this.render(hbs`{{classify "andAnother"}}`);
+  test('It converts camelCase correctly', async function(assert) {
+    await render(hbs`{{classify "andAnother"}}`);
 
-  let expected = 'AndAnother';
+    let expected = 'AndAnother';
 
-  assert.equal(this.$().text().trim(), expected, 'classifies camelCased strings');
-});
+    assert.dom('*').hasText(expected, 'classifies camelCased strings');
+  });
 
-test('It converts underscored strings correctly', function(assert) {
-  this.render(hbs`{{classify "harry_potter"}}`);
+  test('It converts underscored strings correctly', async function(assert) {
+    await render(hbs`{{classify "harry_potter"}}`);
 
-  let expected = 'HarryPotter';
+    let expected = 'HarryPotter';
 
-  assert.equal(this.$().text().trim(), expected, 'classifies underscored strings');
-});
+    assert.dom('*').hasText(expected, 'classifies underscored strings');
+  });
 
-test('It converts spaces in strings correctly', function(assert) {
-  this.render(hbs`{{classify "age is foolish and forgetful when it underestimates youth"}}`);
+  test('It converts spaces in strings correctly', async function(assert) {
+    await render(hbs`{{classify "age is foolish and forgetful when it underestimates youth"}}`);
 
-  let expected = 'AgeIsFoolishAndForgetfulWhenItUnderestimatesYouth';
+    let expected = 'AgeIsFoolishAndForgetfulWhenItUnderestimatesYouth';
 
-  assert.equal(this.$().text().trim(), expected, 'classifies strings with spaces');
-});
+    assert.dom('*').hasText(expected, 'classifies strings with spaces');
+  });
 
-test('It correctly handles empty string input', function(assert) {
-  this.render(hbs`{{classify ""}}`);
+  test('It correctly handles empty string input', async function(assert) {
+    await render(hbs`{{classify ""}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text().trim(), expected, 'renders empty string if input is empty string');
-});
+    assert.dom('*').hasText(expected, 'renders empty string if input is empty string');
+  });
 
-test('It correctly handles undefined input', function(assert) {
-  this.render(hbs`{{classify undefined}}`);
+  test('It correctly handles undefined input', async function(assert) {
+    await render(hbs`{{classify undefined}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text().trim(), expected, 'renders empty string if undefined input');
-});
+    assert.dom('*').hasText(expected, 'renders empty string if undefined input');
+  });
 
-test('It handles a SafeString', function(assert) {
-  this.set('wizard', htmlSafe('harry_potter'));
+  test('It handles a SafeString', async function(assert) {
+    this.set('wizard', htmlSafe('harry_potter'));
 
-  this.render(hbs`{{classify wizard}}`);
+    await render(hbs`{{classify wizard}}`);
 
-  let expected = 'HarryPotter';
+    let expected = 'HarryPotter';
 
-  assert.equal(this.$().text().trim(), expected, 'correctly classifies a SafeString');
+    assert.dom('*').hasText(expected, 'correctly classifies a SafeString');
+  });
 });

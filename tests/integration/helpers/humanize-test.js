@@ -1,105 +1,107 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import { htmlSafe } from '@ember/string';
 
-moduleForComponent('humanize', 'Integration | Helper | {{humanize}}', {
-  integration: true
-});
+module('Integration | Helper | {{humanize}}', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('It converts underscores to spaces and capitalizes the first word', function(assert) {
-  this.render(hbs `{{humanize "item_color"}}`);
+  test('It converts underscores to spaces and capitalizes the first word', async function(assert) {
+    await render(hbs `{{humanize "item_color"}}`);
 
-  let expected = 'Item color';
+    let expected = 'Item color';
 
-  assert.equal(this.$().text().trim(), expected, 'converts underscored to humanized');
-});
+    assert.dom('*').hasText(expected, 'converts underscored to humanized');
+  });
 
-test('It converts dashes to spaces and capitalizes the first word', function(assert) {
-  this.render(hbs `{{humanize "item-color-options"}}`);
+  test('It converts dashes to spaces and capitalizes the first word', async function(assert) {
+    await render(hbs `{{humanize "item-color-options"}}`);
 
-  let expected = 'Item color options';
+    let expected = 'Item color options';
 
-  assert.equal(this.$().text().trim(), expected, 'converts underscored to humanized');
-});
+    assert.dom('*').hasText(expected, 'converts underscored to humanized');
+  });
 
-test('It correctly handles single string input', function(assert) {
-  this.render(hbs `{{humanize "a"}}`);
+  test('It correctly handles single string input', async function(assert) {
+    await render(hbs `{{humanize "a"}}`);
 
-  let expected = 'A';
+    let expected = 'A';
 
-  assert.equal(this.$().text().trim(), expected, 'converts underscored to humanized');
-});
+    assert.dom('*').hasText(expected, 'converts underscored to humanized');
+  });
 
-test('It correctly handles empty string input', function(assert) {
-  this.render(hbs `{{humanize ""}}`);
+  test('It correctly handles empty string input', async function(assert) {
+    await render(hbs `{{humanize ""}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text().trim(), expected, 'converts underscored to humanized');
-});
+    assert.dom('*').hasText(expected, 'converts underscored to humanized');
+  });
 
-test('It correctly handles undefined input', function(assert) {
-  this.render(hbs `{{humanize undefined}}`);
+  test('It correctly handles undefined input', async function(assert) {
+    await render(hbs `{{humanize undefined}}`);
 
-  let expected = '';
+    let expected = '';
 
-  assert.equal(this.$().text().trim(), expected, 'converts underscored to humanized');
-});
+    assert.dom('*').hasText(expected, 'converts underscored to humanized');
+  });
 
-test('It correctly handles capitalised input with spaces', function(assert) {
-  this.render(hbs `{{humanize "CHOOSE AN ITEM COLOR"}}`);
+  test('It correctly handles capitalised input with spaces', async function(assert) {
+    await render(hbs `{{humanize "CHOOSE AN ITEM COLOR"}}`);
 
-  let expected = 'Choose an item color';
+    let expected = 'Choose an item color';
 
-  assert.equal(this.$().text().trim(), expected, 'converts capitals to humanized');
-});
+    assert.dom('*').hasText(expected, 'converts capitals to humanized');
+  });
 
-test('It correctly handles capitalised input with underscores', function(assert) {
-  this.render(hbs `{{humanize "CHOOSE_AN_ITEM_COLOR"}}`);
+  test('It correctly handles capitalised input with underscores', async function(assert) {
+    await render(hbs `{{humanize "CHOOSE_AN_ITEM_COLOR"}}`);
 
-  let expected = 'Choose an item color';
+    let expected = 'Choose an item color';
 
-  assert.equal(this.$().text().trim(), expected, 'converts capitals to humanized');
-});
+    assert.dom('*').hasText(expected, 'converts capitals to humanized');
+  });
 
-test('It correctly handles capitalised input with dashes', function(assert) {
-  this.render(hbs `{{humanize "CHOOSE-AN-ITEM-COLOR"}}`);
+  test('It correctly handles capitalised input with dashes', async function(assert) {
+    await render(hbs `{{humanize "CHOOSE-AN-ITEM-COLOR"}}`);
 
-  let expected = 'Choose an item color';
+    let expected = 'Choose an item color';
 
-  assert.equal(this.$().text().trim(), expected, 'converts capitals to humanized');
-});
+    assert.dom('*').hasText(expected, 'converts capitals to humanized');
+  });
 
-test('It correctly handles mixed-case input with spaces', function(assert) {
-  this.render(hbs `{{humanize "cHoOsE aN iTeM cOlOr"}}`);
+  test('It correctly handles mixed-case input with spaces', async function(assert) {
+    await render(hbs `{{humanize "cHoOsE aN iTeM cOlOr"}}`);
 
-  let expected = 'Choose an item color';
+    let expected = 'Choose an item color';
 
-  assert.equal(this.$().text().trim(), expected, 'converts capitals to humanized');
-});
+    assert.dom('*').hasText(expected, 'converts capitals to humanized');
+  });
 
-test('It correctly handles mixed-case input with underscores', function(assert) {
-  this.render(hbs `{{humanize "cHoOsE_aN_iTeM_cOlOr"}}`);
+  test('It correctly handles mixed-case input with underscores', async function(assert) {
+    await render(hbs `{{humanize "cHoOsE_aN_iTeM_cOlOr"}}`);
 
-  let expected = 'Choose an item color';
+    let expected = 'Choose an item color';
 
-  assert.equal(this.$().text().trim(), expected, 'converts capitals to humanized');
-});
+    assert.dom('*').hasText(expected, 'converts capitals to humanized');
+  });
 
-test('It correctly handles mixed-case input with dashes', function(assert) {
-  this.render(hbs `{{humanize "cHoOsE-aN-iTeM-cOlOr"}}`);
+  test('It correctly handles mixed-case input with dashes', async function(assert) {
+    await render(hbs `{{humanize "cHoOsE-aN-iTeM-cOlOr"}}`);
 
-  let expected = 'Choose an item color';
+    let expected = 'Choose an item color';
 
-  assert.equal(this.$().text().trim(), expected, 'converts capitals to humanized');
-});
+    assert.dom('*').hasText(expected, 'converts capitals to humanized');
+  });
 
-test('It handles a SafeString', function(assert) {
-  this.set('sentence', htmlSafe('cHoOsE aN iTeM cOlOr'));
+  test('It handles a SafeString', async function(assert) {
+    this.set('sentence', htmlSafe('cHoOsE aN iTeM cOlOr'));
 
-  this.render(hbs `{{humanize sentence}}`);
+    await render(hbs `{{humanize sentence}}`);
 
-  let expected = 'Choose an item color';
+    let expected = 'Choose an item color';
 
-  assert.equal(this.$().text().trim(), expected, 'converts SafeString capitals to humanized');
+    assert.dom('*').hasText(expected, 'converts SafeString capitals to humanized');
+  });
 });
