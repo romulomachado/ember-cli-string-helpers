@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-string-helpers",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "String helpers for Ember",
   "scripts": {
     "build": "ember build",
