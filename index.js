@@ -16,8 +16,9 @@ module.exports = {
       app = app.app;
     }
 
-    var config = app.project.config(app.env) || {};
-    var addonConfig = config[this.name] || {};
+    var addonOptions = (this.parent && this.parent.options) || (this.app && this.app.options) || {};
+    var addonConfig = addonOptions[this.name] || {};
+
     this.whitelist = this.generateWhitelist(addonConfig);
     this.blacklist = this.generateBlacklist(addonConfig);
   },
