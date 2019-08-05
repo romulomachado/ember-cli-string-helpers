@@ -11,16 +11,17 @@ ember install ember-cli-string-helpers
 
 ## Configuration
 
-If you don't need all the helpers, you can specify which to whitelist or blacklist using `only` or `except` within your `config/environment.js`:
+If you don't need all the helpers, you can specify which to whitelist or blacklist using `only` or `except` within your `ember-cli-build.js`:
 
 ```js
-module.exports = function(environment) {
-  var ENV = {
+module.exports = function(defaults) {
+  var app = new EmberApp(defaults, {
     'ember-cli-string-helpers': {
       only: ['dasherize', 'underscore'],
       except: ['titleize', 'capitalize']
     }
-  };
+  });
+};
 ```
 
 Both `only` and `except` can be safely used together (the addon computes the diff), although it's best if you only use one for your own sanity.
