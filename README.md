@@ -39,6 +39,7 @@ only: ['camelize'] // imports only `camelize`
 * [`dasherize`](#dasherize)
 * [`html-safe`](#html-safe)
 * [`humanize`](#humanize)
+* [`includes`](#includes)
 * [`lowercase`](#lowercase)
 * [`titleize`](#titleize)
 * [`trim`](#trim)
@@ -105,6 +106,17 @@ Removes dashes and underscores from a string, capitalizes the first letter and m
 ```hbs
 {{humanize "some-string"}}
 {{humanize phrase}}
+```
+
+**[⬆️ back to top](#available-helpers)**
+
+#### `includes`
+Check whether a phrase contains a substring. The phrase can also be a string array.
+
+```hbs
+{{includes "some" "this is some string right here"}}
+{{includes "some" (array "this" "is" "some" "string" "right" "here")}}
+{{includes string phrase}}
 ```
 
 **[⬆️ back to top](#available-helpers)**
