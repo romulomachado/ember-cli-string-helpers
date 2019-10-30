@@ -7,11 +7,6 @@ import { htmlSafe } from '@ember/string';
 module('Integration | Helper | {{includes}}', function(hooks) {
   setupRenderingTest(hooks);
 
-  // it handles safestrings for both params
-  // it handles an array for the phrase
-  // it includes is true
-  // it includes is false
-
   test('It returns the correct value when the phrase is a string', async function(assert) {
     await render(
       hbs`{{includes "elit" "Lorem ipsum dolor sit amet, consectetur adipiscing elit."}}`
