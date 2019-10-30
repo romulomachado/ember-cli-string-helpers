@@ -56,6 +56,7 @@ Camelizes a string using `Ember.String.camelize`.
 {{camelize "hello jim bob"}}
 {{camelize stringWithDashes}}
 ```
+Output: `helloJimBob`
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -66,6 +67,7 @@ Capitalizes a string using `Ember.String.capitalize`.
 {{capitalize "hello jim bob"}}
 {{capitalize fullName}}
 ```
+Output: `Hello jim bob`
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -76,6 +78,7 @@ Classifies a string using `Ember.String.classify`.
 {{classify "hello jim bob"}}
 {{classify stringWithDashes}}
 ```
+Output: `HelloJimBob`
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -86,6 +89,7 @@ Dasherizes a string using `Ember.String.dasherize`.
 {{dasherize "whatsThat"}}
 {{dasherize phrase}}
 ```
+Output: `whats-that`
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -106,6 +110,7 @@ Removes dashes and underscores from a string, capitalizes the first letter and m
 {{humanize "some-string"}}
 {{humanize phrase}}
 ```
+Output: `Some string`
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -117,6 +122,7 @@ Lowercases a string.
 {{lowercase "People Person's Paper People"}}
 {{lowercase phrase}}
 ```
+Output: `people person's paper people`
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -127,6 +133,7 @@ Capitalizes every word separated by a white space or a dash.
 {{titleize "my big fat greek wedding"}}
 {{titleize phrase}}
 ```
+Output: `My Big Fat Greek Wedding`
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -137,6 +144,7 @@ Trim a string.
 {{trim "  Lorem ipsum dolor sit amet, consectetur adipiscing elit.   "}}
 {{trim phrase}}
 ```
+Output: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`
 
 #### `truncate`
 Truncates a string with a characterLimit and optionally adds an ellipsis to the end.
@@ -145,16 +153,18 @@ Truncates a string with a characterLimit and optionally adds an ellipsis to the 
 {{truncate "Lorem ipsum dolor sit amet, consectetur adipiscing elit." 20 true}}
 {{truncate phrase characterLimit useEllipsis}}
 ```
+Output: `Lorem ipsum dolor...`
 
 **[⬆️ back to top](#available-helpers)**
 
 #### `underscore`
-Capitalizes a string using `Ember.String.underscore`.
+Underscores a string using `Ember.String.underscore`.
 
 ```hbs
 {{underscore "whatsThat"}}
 {{underscore phrase}}
 ```
+Output: `whats_that`
 
 **[⬆️ back to top](#available-helpers)**
 
@@ -165,6 +175,7 @@ Uppercases a string.
 {{uppercase "loud noises"}}
 {{uppercase phrase}}
 ```
+Output: `LOUD NOISES`
 
 **[⬆️ back to top](#available-helpers)**
 
