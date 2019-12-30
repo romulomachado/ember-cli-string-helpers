@@ -2408,15 +2408,15 @@ body@^5.1.0:
     raw-body "~1.1.0"
     safe-json-parse "~1.0.1"
 
-boilerplate-update@0.29.7:
-  version "0.29.7"
-  resolved "https://registry.yarnpkg.com/boilerplate-update/-/boilerplate-update-0.29.7.tgz#da3a798aa1ea4e129ff454c81e8c478b1d8d0cf5"
-  integrity sha512-Eju5EvqqaXshKC2/4h/G32JcsSMOs6ruTdCdj2pA1m6HemcgYXaXsKrzz7b2EQ7bXq4TC3QImx/DP1m84W2lQA==
+boilerplate-update@0.31.0:
+  version "0.31.0"
+  resolved "https://registry.yarnpkg.com/boilerplate-update/-/boilerplate-update-0.31.0.tgz#70dae8f1b93ae77a272dd22bc727783e79d46e13"
+  integrity sha512-qzpmfHyvLw2ggUeYYKn2ysGrsednkA55g7UoGlYIL+j2z52wW0pIf2yfX+zPYvZAkdOiCzDqXzH8nBIKQ0y5dw==
   dependencies:
     cpr "^3.0.1"
     debug "^4.1.1"
     execa "^3.0.0"
-    git-diff-apply "0.19.7"
+    git-diff-apply "0.20.0"
     https-proxy-agent "^3.0.0"
     inquirer "^7.0.0"
     merge-package.json "^3.1.2"
@@ -4422,11 +4422,11 @@ ember-cli-uglify@^3.0.0:
     lodash.defaultsdeep "^4.6.0"
 
 ember-cli-update@^0.47.2:
-  version "0.47.2"
-  resolved "https://registry.yarnpkg.com/ember-cli-update/-/ember-cli-update-0.47.2.tgz#d07a3de6a715343c91896c1caf55b5a228b150e6"
-  integrity sha512-2hs15J+KEWA898ldty66geQw8jo1HlKXZWgUBc72DY29rz3D37lDXYFAI+hFMbJ5RqOii5gFv9TuAwB+Y0n1Uw==
+  version "0.47.13"
+  resolved "https://registry.yarnpkg.com/ember-cli-update/-/ember-cli-update-0.47.13.tgz#b42076e73d3321ecde80a23e72404fba52ec01b6"
+  integrity sha512-ndNo+mGOFuY6rifo+QJwPxSnvey+/Yej0Q4RVwVjxfaGNpRIgYjBMwQTEQ2nVEG8gw+NIk1eeoQXDFTdcaX4MA==
   dependencies:
-    boilerplate-update "0.29.7"
+    boilerplate-update "0.31.0"
     debug "^4.1.1"
     execa "^3.4.0"
     fs-extra "^8.0.0"
@@ -5813,10 +5813,10 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-git-diff-apply@0.19.7:
-  version "0.19.7"
-  resolved "https://registry.yarnpkg.com/git-diff-apply/-/git-diff-apply-0.19.7.tgz#e5a3b7a38b4327f3a559e1ab101e179dd7c46581"
-  integrity sha512-UFM4a7l5TnPp2FYxBmlH6p7UEpbogBm5/dQG8Vaz8wsM/JP7uM8aRoBN5FBbV05ktOHBk3uisPS+P6pK9BnF8Q==
+git-diff-apply@0.20.0:
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/git-diff-apply/-/git-diff-apply-0.20.0.tgz#41cd1d1d47ee70db52b5c6b1f148dc25b8937941"
+  integrity sha512-RcZTuUeStSOcjfxsMlpW1asj1vNe69QWmhedJf0JaGZMgtHkjsVqv/rpT7DFhB7jknU3EILzY23bbtcAzF4oQw==
   dependencies:
     debug "^4.0.0"
     fixturify "^1.0.0"
