@@ -2253,18 +2253,18 @@ body@^5.1.0:
     raw-body "~1.1.0"
     safe-json-parse "~1.0.1"
 
-boilerplate-update@0.31.0:
-  version "0.31.0"
-  resolved "https://registry.yarnpkg.com/boilerplate-update/-/boilerplate-update-0.31.0.tgz#70dae8f1b93ae77a272dd22bc727783e79d46e13"
-  integrity sha512-qzpmfHyvLw2ggUeYYKn2ysGrsednkA55g7UoGlYIL+j2z52wW0pIf2yfX+zPYvZAkdOiCzDqXzH8nBIKQ0y5dw==
+boilerplate-update@0.33.2:
+  version "0.33.2"
+  resolved "https://registry.yarnpkg.com/boilerplate-update/-/boilerplate-update-0.33.2.tgz#09c14a16359711ab4af37098d04d70ac8830853c"
+  integrity sha512-u20WiZH5NdeeE23bzaENeCh8hYHaDpAGvQa/nNb3Kog2cR/ZKL5mJ9btcOVcaXFrcpv4Gq0FhUlDD7ctKTGc2Q==
   dependencies:
     cpr "^3.0.1"
     debug "^4.1.1"
     execa "^3.0.0"
-    git-diff-apply "0.20.0"
+    git-diff-apply "0.22.5"
     https-proxy-agent "^3.0.0"
     inquirer "^7.0.0"
-    merge-package.json "^3.1.2"
+    merge-package.json "^3.1.5"
     npx "^10.2.0"
     open "^7.0.0"
     p-reduce "^2.0.0"
@@ -4242,12 +4242,12 @@ ember-cli-uglify@^3.0.0:
     broccoli-uglify-sourcemap "^3.1.0"
     lodash.defaultsdeep "^4.6.0"
 
-ember-cli-update@^0.47.2:
-  version "0.47.13"
-  resolved "https://registry.yarnpkg.com/ember-cli-update/-/ember-cli-update-0.47.13.tgz#b42076e73d3321ecde80a23e72404fba52ec01b6"
-  integrity sha512-ndNo+mGOFuY6rifo+QJwPxSnvey+/Yej0Q4RVwVjxfaGNpRIgYjBMwQTEQ2nVEG8gw+NIk1eeoQXDFTdcaX4MA==
+ember-cli-update@^0.49.8:
+  version "0.49.8"
+  resolved "https://registry.yarnpkg.com/ember-cli-update/-/ember-cli-update-0.49.8.tgz#364a21f3f1ac5c4c33586a16d4b29e6d0bb40c69"
+  integrity sha512-pewyAtc0GZd4kOfg4mehylNQRPS6c2d+vzYNfSengE+HrqYebN/0CHTkRwjzptL1ekwaa6OU4PXkjr0mXmAsJQ==
   dependencies:
-    boilerplate-update "0.31.0"
+    boilerplate-update "0.33.2"
     debug "^4.1.1"
     execa "^3.4.0"
     fs-extra "^8.0.0"
@@ -4257,7 +4257,7 @@ ember-cli-update@^0.47.2:
     semver "^6.0.0"
     tmp "0.1.0"
     update-notifier "^4.0.0"
-    yargs "^15.0.0"
+    yargs "^15.1.0"
 
 ember-cli-version-checker@^2.0.0, ember-cli-version-checker@^2.1.2:
   version "2.1.2"
@@ -5634,15 +5634,14 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
-git-diff-apply@0.20.0:
-  version "0.20.0"
-  resolved "https://registry.yarnpkg.com/git-diff-apply/-/git-diff-apply-0.20.0.tgz#41cd1d1d47ee70db52b5c6b1f148dc25b8937941"
-  integrity sha512-RcZTuUeStSOcjfxsMlpW1asj1vNe69QWmhedJf0JaGZMgtHkjsVqv/rpT7DFhB7jknU3EILzY23bbtcAzF4oQw==
+git-diff-apply@0.22.5:
+  version "0.22.5"
+  resolved "https://registry.yarnpkg.com/git-diff-apply/-/git-diff-apply-0.22.5.tgz#6415daf2e4f627c964097530627dd760a0df5517"
+  integrity sha512-2C1ckfXamKUSBHiAJcVNnRtq8YpsMAs4lQrcxwMp+gfuI3DIEqTeR5Hom/KAoPM9B94RQZDj+PBv1h33JRxVlQ==
   dependencies:
     debug "^4.0.0"
     fixturify "^1.0.0"
     fs-extra "^8.0.0"
-    klaw "^3.0.0"
     tmp "0.1.0"
     uuid "^3.1.0"
     yargs "^15.0.0"
@@ -5860,7 +5859,7 @@ got@^9.6.0:
     to-readable-stream "^1.0.0"
     url-parse-lax "^3.0.0"
 
-graceful-fs@^4.1.11, graceful-fs@^4.1.3, graceful-fs@^4.1.5, graceful-fs@^4.1.6, graceful-fs@^4.1.9, graceful-fs@~4.1.11:
+graceful-fs@^4.1.11, graceful-fs@^4.1.3, graceful-fs@^4.1.5, graceful-fs@^4.1.6, graceful-fs@~4.1.11:
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
   integrity sha1-Dovf5NHduIVNZOBOp8AOKgJuVlg=
@@ -6945,13 +6944,6 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
   integrity sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
 
-klaw@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/klaw/-/klaw-3.0.0.tgz#b11bec9cf2492f06756d6e809ab73a2910259146"
-  integrity sha512-0Fo5oir+O9jnXu5EefYbVK+mHMBeEVEy2cmctR1O1NECcCkPRreJKrS6Qt/j3KC2C148Dfo9i3pCmCMsdqGr0g==
-  dependencies:
-    graceful-fs "^4.1.9"
-
 latest-version@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/latest-version/-/latest-version-3.1.0.tgz#a205383fea322b33b5ae3b18abee0dc2f356ee15"
@@ -7695,12 +7687,12 @@ merge-descriptors@1.0.1:
   resolved "https://registry.yarnpkg.com/merge-descriptors/-/merge-descriptors-1.0.1.tgz#b00aaa556dd8b44568150ec9d1b953f3f90cbb61"
   integrity sha1-sAqqVW3YtEVoFQ7J0blT8/kMu2E=
 
-merge-package.json@^3.1.2:
-  version "3.1.2"
-  resolved "https://registry.yarnpkg.com/merge-package.json/-/merge-package.json-3.1.2.tgz#fb4aae08deace41ec902ba8a8a3059da08a00ab1"
-  integrity sha512-QAPKllnwFfsz8L/OAoDW6PPyzn/0K1/cDk6GvKGV2bpFyCAlkBDbdE6+9Yv6/sfiNJa4PuliQNvQ6jNZcfg4zw==
+merge-package.json@^3.1.5:
+  version "3.1.5"
+  resolved "https://registry.yarnpkg.com/merge-package.json/-/merge-package.json-3.1.5.tgz#6804eb830f82a102b2ff6be391515c86377723a4"
+  integrity sha512-8P8MlJl4EKqDLhDnCighuMXbFc6mpcGaFuvkRzhKOBxtrhFsmDmCkBF6+YZtmYcfL77dyyb+pHnyZJ4V3ULxAw==
   dependencies:
-    rfc6902-ordered "^4.0.0"
+    rfc6902-ordered "^4.0.5"
     three-way-merger "0.6.0"
 
 merge-stream@^2.0.0:
@@ -9656,10 +9648,10 @@ retry@^0.10.0, retry@~0.10.1:
   resolved "https://registry.yarnpkg.com/retry/-/retry-0.10.1.tgz#e76388d217992c252750241d3d3956fed98d8ff4"
   integrity sha1-52OI0heZLCUnUCQdPTlW/tmNj/Q=
 
-rfc6902-ordered@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/rfc6902-ordered/-/rfc6902-ordered-4.0.0.tgz#a3d07e8c402edbeacfe9afa6d639aedfc3f19048"
-  integrity sha512-uGpjTewv2UxexoQPtYDpAZKt3WX/ujxkw3TqJAZOUu3WkwCNsu67Dlk+KPn/RY851+U3PvSTNOKs58d9YBubeQ==
+rfc6902-ordered@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/rfc6902-ordered/-/rfc6902-ordered-4.0.5.tgz#054a23984401ad276aa668def89e010038e4dd95"
+  integrity sha512-OsdXZ7FP8DPXd+p+qRxAYi2yFsgAzTp4+ZuvhJri6lLyZYsm3zvGGq5qrmN/jmmv06IV/KVDT062owHUc2Ec+A==
   dependencies:
     debug "^4.0.0"
     rfc6902 "^3.0.1"
@@ -11527,10 +11519,10 @@ yargs@^11.0.0:
     y18n "^3.2.1"
     yargs-parser "^9.0.2"
 
-yargs@^15.0.0:
-  version "15.0.2"
-  resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.0.2.tgz#4248bf218ef050385c4f7e14ebdf425653d13bd3"
-  integrity sha512-GH/X/hYt+x5hOat4LMnCqMd8r5Cv78heOMIJn1hr7QPPBqfeC6p89Y78+WB9yGDvfpCvgasfmWLzNzEioOUD9Q==
+yargs@^15.0.0, yargs@^15.1.0:
+  version "15.1.0"
+  resolved "https://registry.yarnpkg.com/yargs/-/yargs-15.1.0.tgz#e111381f5830e863a89550bd4b136bb6a5f37219"
+  integrity sha512-T39FNN1b6hCW4SOIk1XyTOWxtXdcen0t+XYrysQmChzSipvhBO8Bj0nK1ozAasdk24dNWuMZvr4k24nz+8HHLg==
   dependencies:
     cliui "^6.0.0"
     decamelize "^1.2.0"
