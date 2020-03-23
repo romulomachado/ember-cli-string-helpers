@@ -42,7 +42,7 @@
     "eslint-plugin-ember-suave": "^2.0.0",
     "eslint-plugin-node": "^11.0.0",
     "loader.js": "^4.7.0",
-    "mocha": "^6.2.2",
+    "mocha": "^7.1.1",
     "qunit-dom": "^0.9.0"
   },
   "keywords": [
