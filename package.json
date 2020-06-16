@@ -25,7 +25,7 @@
     "ember-cli-htmlbars-inline-precompile": "^3.0.0",
     "ember-cli-inject-live-reload": "^2.0.1",
     "ember-cli-sri": "^2.1.1",
-    "ember-cli-template-lint": "^1.0.0-beta.1",
+    "ember-cli-template-lint": "^2.0.2",
     "ember-cli-uglify": "^3.0.0",
     "ember-cli-update": "^0.54.6",
     "ember-disable-prototype-extensions": "^1.1.3",
