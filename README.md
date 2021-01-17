@@ -31,6 +31,20 @@ except: ['camelize'] // imports all helpers except `camelize`
 only: ['camelize'] // imports only `camelize`
 ```
 
+### Addons
+
+Similar to the configuration above, but place it in the `options` hash of your `index.js` file. If a consuming application also uses `ember-cli-string-helpers` as well, the app and addon configuration will be merged.
+
+```js
+module.exports = {
+  options: {
+    'ember-cli-string-helpers': {
+      only: ['camelize']
+    }
+  }
+}
+```
+
 ## Available helpers
 
 * [`camelize`](#camelize)
