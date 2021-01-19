@@ -196,7 +196,7 @@ or:
 {{/each}}
 ```
 
-See also: [Ember `w` documentation](http://emberjs.com/api/classes/Ember.String.html#method_w)
+See also: [Ember `w` documentation](https://api.emberjs.com/ember/release/classes/String/methods/w?anchor=w)
 
 **[⬆️ back to top](#available-helpers)**
 
