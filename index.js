@@ -31,6 +31,14 @@ module.exports = {
     return this.filterHelpers(tree, new RegExp(moduleRegexp, 'i'));
   },
 
+  treeForApp: function() {
+    // see: https://github.com/ember-cli/ember-cli/issues/4463
+    var tree = this._super.treeForApp.apply(this, arguments);
+    var moduleRegexp = /^helpers\//;
+
+    return this.filterHelpers(tree, new RegExp(moduleRegexp, 'i'));
+  },
+
   filterHelpers: function(tree, regex) {
     var whitelist = this.whitelist;
     var blacklist = this.blacklist;
