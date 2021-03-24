@@ -15,6 +15,7 @@
   "homepage": "https://github.com/romulomachado/ember-cli-string-helpers",
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
+    "@embroider/test-setup": "^0.37.0",
     "broccoli-asset-rev": "^3.0.0",
     "chai": "^4.2.0",
     "ember-ajax": "^5.0.0",

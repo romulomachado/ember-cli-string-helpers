@@ -1394,6 +1394,14 @@
     ember-cli-htmlbars-inline-precompile "^2.1.0"
     ember-test-waiters "^1.1.1"
 
+"@embroider/test-setup@^0.37.0":
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/@embroider/test-setup/-/test-setup-0.37.0.tgz#4c0590c8c3e45813dd53b8b551206acd0a49cefd"
+  integrity sha512-4jme5zEonjGvKeyVRygyXmooMuwmaa3nBiIxwbkRA6KWh0BLyZSqPwlQl93s7IT7S5PO5U9TqNiqI4yp2k5T7Q==
+  dependencies:
+    lodash "^4.17.20"
+    resolve "^1.17.0"
+
 "@glimmer/compiler@^0.38.0":
   version "0.38.4"
   resolved "https://registry.yarnpkg.com/@glimmer/compiler/-/compiler-0.38.4.tgz#ea5f39b9681a652dd96c48eeb55cd95aa6f6eddd"
@@ -8574,6 +8582,11 @@ lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17
   version "4.17.19"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
   integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
+
+lodash@^4.17.20:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-symbols@4.0.0:
   version "4.0.0"
