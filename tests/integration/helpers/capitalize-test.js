@@ -2,7 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import { htmlSafe } from '@ember/string';
+import { htmlSafe } from '@ember/template';
 
 module('Integration | Helper | {{capitalize}}', function(hooks) {
   setupRenderingTest(hooks);
@@ -50,7 +50,7 @@ module('Integration | Helper | {{capitalize}}', function(hooks) {
   test('It handles a SafeString', async function(assert) {
     this.set('greeting', htmlSafe('hi'));
 
-    await render(hbs`{{capitalize greeting}}`);
+    await render(hbs`{{capitalize this.greeting}}`);
 
     let expected = 'Hi';
 

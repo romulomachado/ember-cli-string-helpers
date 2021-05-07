@@ -2,7 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import { htmlSafe } from '@ember/string';
+import { htmlSafe } from '@ember/template';
 
 module('Integration | Helper | {{humanize}}', function(hooks) {
   setupRenderingTest(hooks);
@@ -98,7 +98,7 @@ module('Integration | Helper | {{humanize}}', function(hooks) {
   test('It handles a SafeString', async function(assert) {
     this.set('sentence', htmlSafe('cHoOsE aN iTeM cOlOr'));
 
-    await render(hbs `{{humanize sentence}}`);
+    await render(hbs `{{humanize this.sentence}}`);
 
     let expected = 'Choose an item color';
 

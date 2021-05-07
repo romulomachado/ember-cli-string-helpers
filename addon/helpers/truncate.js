@@ -1,5 +1,5 @@
 import { helper } from '@ember/component/helper';
-import { isHTMLSafe } from '@ember/string';
+import { isHTMLSafe } from '@ember/template';
 
 export function truncate([string, characterLimit = 140, useEllipsis = true]) {
   let limit = useEllipsis ? characterLimit - 3 : characterLimit;

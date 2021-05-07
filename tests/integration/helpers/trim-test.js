@@ -2,7 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import { htmlSafe } from '@ember/string';
+import { htmlSafe } from '@ember/template';
 
 module('Integration | Helper | {{trim}}', function(hooks) {
   setupRenderingTest(hooks);
@@ -34,7 +34,7 @@ module('Integration | Helper | {{trim}}', function(hooks) {
   test('It handles a SafeString', async function(assert) {
     this.set('breakup', htmlSafe('  i need some space  '));
 
-    await render(hbs`{{trim breakup}}`);
+    await render(hbs`{{trim this.breakup}}`);
 
     let expected = 'i need some space';
 

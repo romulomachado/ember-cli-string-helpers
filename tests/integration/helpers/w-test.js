@@ -9,7 +9,7 @@ module('Integration | Helper | {{w}}', function(hooks) {
   test('It splits the string on whitespace', async function(assert) {
     this.set('string', 'foo bar\nbaz');
 
-    await render(hbs`{{#each (w string) as |word|}}{{word}}{{/each}}`);
+    await render(hbs`{{#each (w this.string) as |word|}}{{word}}{{/each}}`);
 
     assert.dom('*').hasText('foobarbaz', 'the words are split');
   });
