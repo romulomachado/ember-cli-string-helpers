@@ -2,7 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import { htmlSafe } from '@ember/string';
+import { htmlSafe } from '@ember/template';
 
 module('Integration | Helper | {{camelize}}', function(hooks) {
   setupRenderingTest(hooks);
@@ -58,7 +58,7 @@ module('Integration | Helper | {{camelize}}', function(hooks) {
   test('It handles a SafeString', async function(assert) {
     this.set('wizard', htmlSafe('harry-potter'));
 
-    await render(hbs`{{camelize wizard}}`);
+    await render(hbs`{{camelize this.wizard}}`);
 
     let expected = 'harryPotter';
 

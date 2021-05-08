@@ -1,5 +1,5 @@
 import { helper } from '@ember/component/helper';
-import { isHTMLSafe } from '@ember/string';
+import { isHTMLSafe } from '@ember/template';
 
 const regex = /_+|-+/g;
 const replacement = ' ';

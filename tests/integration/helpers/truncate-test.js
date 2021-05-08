@@ -2,7 +2,7 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
-import { htmlSafe } from '@ember/string';
+import { htmlSafe } from '@ember/template';
 
 module('Integration | Helper | {{truncate}}', function(hooks) {
   setupRenderingTest(hooks);
@@ -50,7 +50,7 @@ module('Integration | Helper | {{truncate}}', function(hooks) {
   test('It handles a SafeString', async function(assert) {
     this.set('sentence', htmlSafe('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit quam enim, in suscipit est rutrum id. Etiam vitae blandit purus, sed semper sem.'));
 
-    await render(hbs`{{truncate sentence 20}}`);
+    await render(hbs`{{truncate this.sentence 20}}`);
 
     let expected = 'Lorem ipsum dolor...';
 
