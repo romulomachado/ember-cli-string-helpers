@@ -11,8 +11,8 @@
     "node-test": "mocha test --recursive --reporter spec",
     "test:all": "ember try:each"
   },
-  "bugs": "https://github.com/romulomachado/ember-cli-string-helpers/issues",
-  "homepage": "https://github.com/romulomachado/ember-cli-string-helpers",
+  "bugs": "https://github.com/adopted-ember-addons/ember-cli-string-helpers/issues",
+  "homepage": "https://github.com/adopted-ember-addons/ember-cli-string-helpers",
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@embroider/test-setup": "^0.37.0",
@@ -50,7 +50,7 @@
     "ember-addon",
     "helpers"
   ],
-  "repository": "https://github.com/romulomachado/ember-cli-string-helpers",
+  "repository": "https://github.com/adopted-ember-addons/ember-cli-string-helpers",
   "license": "MIT",
   "author": [
     "Lauren Tan <arr@sugarpirate.com>",
