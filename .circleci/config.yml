@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/romulomachado/ember-cli-string-helpers
+    working_directory: ~/adopted-ember-addons/ember-cli-string-helpers
     docker:
       - image: circleci/node:10-browsers
     steps:
