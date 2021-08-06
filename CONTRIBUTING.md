@@ -50,7 +50,7 @@ issue's number to the description of your pull-request.
 First clone this repository:
 
 ```sh
-git clone https://github.com/romulomachado/ember-cli-string-helpers.git
+git clone https://github.com/adopted-ember-addons/ember-cli-string-helpers.git
 ```
 
 <!-- Add further details on how to install the project here -->

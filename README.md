@@ -1,5 +1,5 @@
 # ember-cli-string-helpers
-![Download count all time](https://img.shields.io/npm/dt/ember-cli-string-helpers.svg) [![CircleCI](https://circleci.com/gh/romulomachado/ember-cli-string-helpers.svg?style=shield)](https://circleci.com/gh/romulomachado/ember-cli-string-helpers) [![npm version](https://badge.fury.io/js/ember-cli-string-helpers.svg)](https://badge.fury.io/js/ember-cli-string-helpers) [![Ember Observer Score](http://emberobserver.com/badges/ember-cli-string-helpers.svg)](http://emberobserver.com/addons/ember-cli-string-helpers)
+![Download count all time](https://img.shields.io/npm/dt/ember-cli-string-helpers.svg) [![CircleCI](https://circleci.com/gh/adopted-ember-addons/ember-cli-string-helpers.svg?style=shield)](https://circleci.com/gh/adopted-ember-addons/ember-cli-string-helpers) [![npm version](https://badge.fury.io/js/ember-cli-string-helpers.svg)](https://badge.fury.io/js/ember-cli-string-helpers) [![Ember Observer Score](http://emberobserver.com/badges/ember-cli-string-helpers.svg)](http://emberobserver.com/addons/ember-cli-string-helpers)
 
 String helpers for Ember. Extracted from the great [DockYard's ember-composable-helpers](https://github.com/DockYard/ember-composable-helpers/).
 
