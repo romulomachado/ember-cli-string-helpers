@@ -4,6 +4,7 @@
   "description": "String helpers for Ember",
   "scripts": {
     "build": "ember build",
+    "glint": "node node_modules/@glint/core/bin/glint.js",
     "lint:hbs": "ember-template-lint .",
     "lint:js": "eslint .",
     "start": "ember serve",
@@ -16,6 +17,8 @@
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@embroider/test-setup": "^0.37.0",
+    "@glint/core": "^0.9.7",
+    "@glint/environment-ember-loose": "^0.9.7",
     "broccoli-asset-rev": "^3.0.0",
     "chai": "^4.2.0",
     "ember-ajax": "^5.0.0",

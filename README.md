@@ -31,6 +31,14 @@ except: ['camelize'] // imports all helpers except `camelize`
 only: ['camelize'] // imports only `camelize`
 ```
 
+## Glint types
+To enable Glint template typechecking for the addon, add:
+```js
+import 'ember-cli-string-helpers/glint';
+```
+anywhere you put your app's global types into, e.g. `types/global.d.ts`.
+See also [Glint documentation](https://typed-ember.gitbook.io/glint/using-glint/ember/using-addons)
+
 ## Available helpers
 
 * [`camelize`](#camelize)
