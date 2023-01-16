@@ -15,6 +15,7 @@
   "homepage": "https://github.com/adopted-ember-addons/ember-cli-string-helpers",
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
+    "@ember/string": "^3.0.1",
     "@embroider/test-setup": "^0.37.0",
     "broccoli-asset-rev": "^3.0.0",
     "chai": "^4.2.0",
@@ -45,6 +46,9 @@
     "loader.js": "^4.7.0",
     "mocha": "^8.0.1",
     "qunit-dom": "^1.2.0"
+  },
+  "peerDependencies": {
+    "@ember/string": "^3.0.1"
   },
   "keywords": [
     "ember-addon",
